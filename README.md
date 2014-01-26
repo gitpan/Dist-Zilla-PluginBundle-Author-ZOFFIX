@@ -19,7 +19,6 @@ and is approximately equivalent to the following `dist.ini`:
     [PromptIfStale]
     check_all_plugins = 1
     check_all_prereqs = 1
-    fatal             = 1
     skip              = IPC::Open3
     skip              = strict
     skip              = warnings
@@ -87,8 +86,6 @@ and is approximately equivalent to the following `dist.ini`:
 
     [CopyFilesFromRelease]
     filename = README.md
-    filename = LICENSE
-    filename = CONTRIBUTING
 
     [TestRelease]
 

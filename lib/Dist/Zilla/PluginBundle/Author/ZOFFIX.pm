@@ -1,6 +1,6 @@
 package Dist::Zilla::PluginBundle::Author::ZOFFIX;
 
-our $VERSION = '1.001001'; # VERSION
+our $VERSION = '1.001002'; # VERSION
 
 use Moose;
 with 'Dist::Zilla::Role::PluginBundle::Easy';
@@ -18,7 +18,6 @@ sub configure {
             PromptIfStale => {
                 check_all_plugins => 1,
                 check_all_prereqs => 1,
-                fatal             => 1,
                 skip              => [qw/strict  warnings  base/],
             }
         ],
@@ -84,7 +83,7 @@ sub configure {
         ],
         [
             CopyFilesFromRelease => {
-                filename => [qw/README.md  LICENSE  CONTRIBUTING/],
+                filename => [qw/README.md/],
             },
         ],
         'TestRelease',
@@ -135,7 +134,6 @@ and is approximately equivalent to the following C<dist.ini>:
     [PromptIfStale]
     check_all_plugins = 1
     check_all_prereqs = 1
-    fatal             = 1
     skip              = IPC::Open3
     skip              = strict
     skip              = warnings
@@ -203,8 +201,6 @@ and is approximately equivalent to the following C<dist.ini>:
 
     [CopyFilesFromRelease]
     filename = README.md
-    filename = LICENSE
-    filename = CONTRIBUTING
 
     [TestRelease]
 
