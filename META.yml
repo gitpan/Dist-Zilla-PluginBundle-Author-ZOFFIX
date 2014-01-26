@@ -1,0 +1,317 @@
+---
+abstract: 'A plugin bundle for distributions built by ZOFFIX'
+author:
+  - 'Zoffix Znet <cpan@zoffix.com>'
+build_requires:
+  File::Spec: 0
+  IO::Handle: 0
+  IPC::Open3: 0
+  Test::More: 0
+  perl: 5.006
+  strict: 0
+  warnings: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 5.012, CPAN::Meta::Converter version 2.132830'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Dist-Zilla-PluginBundle-Author-ZOFFIX
+provides:
+  Dist::Zilla::PluginBundle::Author::ZOFFIX:
+    file: lib/Dist/Zilla/PluginBundle/Author/ZOFFIX.pm
+    version: 1.001001
+requires:
+  Dist::Zilla::Role::PluginBundle::Easy: 0
+  Moose: 0
+  perl: 5.006
+resources:
+  bugtracker: https://github.com/zoffixznet/dist-zilla-pluginbundle-author-zoffix/issues
+  homepage: http://metacpan.org/release/Dist-Zilla-PluginBundle-Author-ZOFFIX
+  repository: git://github.com/zoffixznet/dist-zilla-pluginbundle-author-zoffix.git
+version: 1.001001
+x_Dist_Zilla:
+  perl:
+    version: 5.014002
+  plugins:
+    -
+      class: Dist::Zilla::Plugin::OurPkgVersion
+      name: OurPkgVersion
+      version: 0.005001
+    -
+      class: Dist::Zilla::Plugin::PromptIfStale
+      config:
+        Dist::Zilla::Plugin::PromptIfStale:
+          check_all_plugins: 1
+          check_all_prereqs: 1
+          modules: []
+          phase: release
+          skip:
+            - IPC::Open3
+            - strict
+            - warnings
+      name: PromptIfStale
+      version: 0.015
+    -
+      class: Dist::Zilla::Plugin::GatherDir
+      name: GatherDir
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::PruneCruft
+      name: PruneCruft
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::ManifestSkip
+      name: ManifestSkip
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::MetaYAML
+      name: MetaYAML
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::License
+      name: License
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::Readme
+      name: Readme
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::ExecDir
+      name: ExecDir
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::ShareDir
+      name: ShareDir
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::MakeMaker
+      name: MakeMaker
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::Manifest
+      name: Manifest
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::ReadmeAnyFromPod
+      name: ReadmeAnyFromPod
+      version: 0.133360
+    -
+      class: Dist::Zilla::Plugin::Test::Compile
+      config:
+        Dist::Zilla::Plugin::Test::Compile:
+          filename: t/00-compile.t
+          module_finder:
+            - ':InstallModules'
+          script_finder:
+            - ':ExecFiles'
+      name: Test::Compile
+      version: 2.039
+    -
+      class: Dist::Zilla::Plugin::Test::DistManifest
+      name: Test::DistManifest
+      version: 2.000004
+    -
+      class: Dist::Zilla::Plugin::Test::EOL
+      name: Test::EOL
+      version: 0.10
+    -
+      class: Dist::Zilla::Plugin::Test::Version
+      name: Test::Version
+      version: 0.002004
+    -
+      class: Dist::Zilla::Plugin::Test::Kwalitee::Extra
+      name: Test::Kwalitee::Extra
+      version: v0.2.0
+    -
+      class: Dist::Zilla::Plugin::MetaTests
+      name: MetaTests
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::Test::CPAN::Meta::JSON
+      name: Test::CPAN::Meta::JSON
+      version: 0.003
+    -
+      class: Dist::Zilla::Plugin::Test::MinimumVersion
+      name: Test::MinimumVersion
+      version: 2.000005
+    -
+      class: Dist::Zilla::Plugin::MojibakeTests
+      name: MojibakeTests
+      version: 0.5
+    -
+      class: Dist::Zilla::Plugin::NoTabsTests
+      config:
+        Dist::Zilla::Plugin::Test::NoTabs:
+          module_finder:
+            - ':InstallModules'
+          script_finder:
+            - ':ExecFiles'
+      name: NoTabsTests
+      version: 0.06
+    -
+      class: Dist::Zilla::Plugin::PodCoverageTests
+      name: PodCoverageTests
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::PodSyntaxTests
+      name: PodSyntaxTests
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::Test::Portability
+      name: Test::Portability
+      version: 2.000005
+    -
+      class: Dist::Zilla::Plugin::Test::UnusedVars
+      name: Test::UnusedVars
+      version: 2.000005
+    -
+      class: Dist::Zilla::Plugin::Test::Pod::LinkCheck
+      name: Test::Pod::LinkCheck
+      version: 1.001
+    -
+      class: Dist::Zilla::Plugin::Test::CPAN::Changes
+      name: Test::CPAN::Changes
+      version: 0.008
+    -
+      class: Dist::Zilla::Plugin::Test::PodSpelling
+      name: Test::PodSpelling
+      version: 2.006002
+    -
+      class: Dist::Zilla::Plugin::Git::NextVersion
+      name: Git::NextVersion
+      version: 2.020
+    -
+      class: Dist::Zilla::Plugin::AutoPrereqs
+      name: AutoPrereqs
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::MetaConfig
+      name: MetaConfig
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::Prereqs::AuthorDeps
+      name: Prereqs::AuthorDeps
+      version: 0.002
+    -
+      class: Dist::Zilla::Plugin::MinimumPerl
+      name: MinimumPerl
+      version: 1.003
+    -
+      class: Dist::Zilla::Plugin::MetaProvides::Package
+      config:
+        Dist::Zilla::Plugin::MetaProvides::Package:
+          finder_objects:
+            -
+              class: Dist::Zilla::Plugin::FinderCode
+              name: MetaProvides::Package/AUTOVIV/:InstallModulesPM
+              version: 5.012
+        Dist::Zilla::Role::MetaProvider::Provider:
+          inherit_missing: 1
+          inherit_version: 1
+          meta_noindex: 1
+      name: MetaProvides::Package
+      version: 1.15000003
+    -
+      class: Dist::Zilla::Plugin::GithubMeta
+      name: GithubMeta
+      version: 0.42
+    -
+      class: Dist::Zilla::Plugin::AutoMetaResources
+      name: AutoMetaResources
+      version: 1.20
+    -
+      class: Dist::Zilla::Plugin::InstallGuide
+      name: InstallGuide
+      version: 1.200002
+    -
+      class: Dist::Zilla::Plugin::CheckSelfDependency
+      config:
+        Dist::Zilla::Plugin::CheckSelfDependency:
+          finder:
+            - ':InstallModules'
+      name: CheckSelfDependency
+      version: 0.007
+    -
+      class: Dist::Zilla::Plugin::CheckPrereqsIndexed
+      name: CheckPrereqsIndexed
+      version: 0.010
+    -
+      class: Dist::Zilla::Plugin::CopyFilesFromRelease
+      name: CopyFilesFromRelease
+      version: 0.001
+    -
+      class: Dist::Zilla::Plugin::TestRelease
+      name: TestRelease
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::InstallRelease
+      name: InstallRelease
+      version: 0.008
+    -
+      class: Dist::Zilla::Plugin::ConfirmRelease
+      name: ConfirmRelease
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::Git::Check
+      name: Git::Check
+      version: 2.020
+    -
+      class: Dist::Zilla::Plugin::Git::Commit
+      name: Git::Commit
+      version: 2.020
+    -
+      class: Dist::Zilla::Plugin::Git::Tag
+      name: Git::Tag
+      version: 2.020
+    -
+      class: Dist::Zilla::Plugin::Git::Push
+      name: Git::Push
+      version: 2.020
+    -
+      class: Dist::Zilla::Plugin::UploadToCPAN
+      name: UploadToCPAN
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::FinderCode
+      name: ':InstallModules'
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::FinderCode
+      name: ':IncModules'
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::FinderCode
+      name: ':TestFiles'
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::FinderCode
+      name: ':ExecFiles'
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::FinderCode
+      name: ':ShareFiles'
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::FinderCode
+      name: ':MainModule'
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::FinderCode
+      name: ':AllFiles'
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::FinderCode
+      name: ':NoFiles'
+      version: 5.012
+    -
+      class: Dist::Zilla::Plugin::FinderCode
+      name: MetaProvides::Package/AUTOVIV/:InstallModulesPM
+      version: 5.012
+  zilla:
+    class: Dist::Zilla::Dist::Builder
+    config:
+      is_trial: 0
+    version: 5.012
