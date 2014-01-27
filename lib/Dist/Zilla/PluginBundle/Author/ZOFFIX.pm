@@ -1,9 +1,13 @@
 package Dist::Zilla::PluginBundle::Author::ZOFFIX;
 
-our $VERSION = '1.001002'; # VERSION
+our $VERSION = '1.001003'; # VERSION
 
 use Moose;
-with 'Dist::Zilla::Role::PluginBundle::Easy';
+with (
+  'Dist::Zilla::Role::PluginBundle::Easy',
+  'Dist::Zilla::Role::PluginBundle::PluginRemover',
+  'Dist::Zilla::Role::PluginBundle::Config::Slicer',
+);
 
 =for Pod::Coverage configure
 

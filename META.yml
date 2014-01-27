@@ -22,16 +22,18 @@ name: Dist-Zilla-PluginBundle-Author-ZOFFIX
 provides:
   Dist::Zilla::PluginBundle::Author::ZOFFIX:
     file: lib/Dist/Zilla/PluginBundle/Author/ZOFFIX.pm
-    version: 1.001002
+    version: 1.001003
 requires:
+  Dist::Zilla::Role::PluginBundle::Config::Slicer: 0
   Dist::Zilla::Role::PluginBundle::Easy: 0
+  Dist::Zilla::Role::PluginBundle::PluginRemover: 0
   Moose: 0
   perl: 5.006
 resources:
   bugtracker: https://github.com/zoffixznet/dist-zilla-pluginbundle-author-zoffix/issues
   homepage: http://metacpan.org/release/Dist-Zilla-PluginBundle-Author-ZOFFIX
   repository: git://github.com/zoffixznet/dist-zilla-pluginbundle-author-zoffix.git
-version: 1.001002
+version: 1.001003
 x_Dist_Zilla:
   perl:
     version: 5.014002
