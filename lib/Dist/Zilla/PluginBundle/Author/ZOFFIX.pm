@@ -1,6 +1,6 @@
 package Dist::Zilla::PluginBundle::Author::ZOFFIX;
 
-our $VERSION = '1.001004'; # VERSION
+our $VERSION = '1.001005'; # VERSION
 
 use Moose;
 with (
@@ -18,6 +18,7 @@ sub configure {
 
     $self->add_plugins(
         'OurPkgVersion',
+        'Pod::Spiffy',
         [
             PromptIfStale => {
                 check_all_plugins => 1,
@@ -137,13 +138,17 @@ L<Dist::Zilla::PluginBundle::Author::ETHER>
 and is approximately equivalent to the following C<dist.ini>:
 
     [OurPkgVersion]
+    [Pod::Spiffy]
 
     [PromptIfStale]
     check_all_plugins = 1
     check_all_prereqs = 1
-    skip              = IPC::Open3
     skip              = strict
     skip              = warnings
+    skip              = base
+    skip              = ExtUtils::MakeMaker
+    skip              = IPC::Open3
+    skip              = File::Copy
 
     [GatherDir]
     [PruneCruft]
