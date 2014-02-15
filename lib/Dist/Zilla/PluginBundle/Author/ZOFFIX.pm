@@ -1,6 +1,6 @@
 package Dist::Zilla::PluginBundle::Author::ZOFFIX;
 
-our $VERSION = '1.001005'; # VERSION
+our $VERSION = '1.001006'; # VERSION
 
 use Moose;
 with (
@@ -56,7 +56,7 @@ sub configure {
         Test::DistManifest
         Test::EOL
         Test::Version
-        Test::Kwalitee::Extra
+        Test::Kwalitee
         MetaTests
         Test::CPAN::Meta::JSON
         MojibakeTests
@@ -169,7 +169,7 @@ and is approximately equivalent to the following C<dist.ini>:
     [Test::DistManifest]
     [Test::EOL]
     [Test::Version]
-    [Test::Kwalitee::Extra]
+    [Test::Kwalitee]
     [MetaTests]
     [Test::CPAN::Meta::JSON]
     [Test::MinimumVersion]
